@@ -6,7 +6,7 @@ export function DashboardStats() {
   const stats = getDashboardStats(state);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 mt-12">
       {/* Total Clients Card */}
       <div className="bg-white rounded-lg shadow-md p-6 border border-gray-200">
         <div className="flex items-center">
