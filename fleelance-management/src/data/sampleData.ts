@@ -21,7 +21,7 @@ export const initialProjects: Project[] = [
     id: "1",
     clientId: "1",
     title: "E-commerce Website",
-    budget: 50000,
+    budget: 700000,
     status: "in-progress",
     paymentStatus: "unpaid"
   },
@@ -29,7 +29,7 @@ export const initialProjects: Project[] = [
     id: "2",
     clientId: "2", 
     title: "Mobile App Development",
-    budget: 80000,
+    budget: 800000,
     status: "completed",
     paymentStatus: "paid"
   }

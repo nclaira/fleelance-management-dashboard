@@ -69,9 +69,16 @@ function DashboardContent() {
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
                       {state.payments.map((payment, index) => (
+                        // <tr key={index} className="hover:bg-gray-50">
+                        //   <td className="px-6 py-4 text-sm font-medium text-gray-900">{payment.projectId}</td>
+                        //   <td className="px-6 py-4 text-sm text-gray-900">RWF{payment.amount.toLocaleString()}</td>
+                        //   <td className="px-6 py-4 text-sm text-gray-500">
+                        //     {new Date(payment.date).toLocaleDateString()}
+                        //   </td>
+                        // </tr>
                         <tr key={index} className="hover:bg-gray-50">
                           <td className="px-6 py-4 text-sm font-medium text-gray-900">{payment.projectId}</td>
-                          <td className="px-6 py-4 text-sm text-gray-900">${payment.amount.toLocaleString()}</td>
+                          <td className="px-6 py-4 text-sm text-gray-900">RWF{payment.amount.toLocaleString()}</td>
                           <td className="px-6 py-4 text-sm text-gray-500">
                             {new Date(payment.date).toLocaleDateString()}
                           </td>
@@ -95,8 +102,8 @@ function DashboardContent() {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-lg font-semibold mb-4">Revenue Overview</h3>
                 <div className="space-y-2">
-                  <p>Total Revenue: ${state.payments.reduce((sum, p) => sum + p.amount, 0).toLocaleString()}</p>
-                  <p>Pending Payments: ${state.projects
+                  <p>Total Revenue: RFW{state.payments.reduce((sum, p) => sum + p.amount, 0).toLocaleString()}</p>
+                  <p>Pending Payments: RWF{state.projects
                     .filter(p => p.paymentStatus === 'unpaid')
                     .reduce((sum, p) => sum + p.budget, 0)
                     .toLocaleString()}</p>
@@ -132,7 +139,7 @@ function DashboardContent() {
     
     <div className="flex space-x-4 lg:space-x-6">
       <div className="text-center">
-        <div className="text-2xl font-bold">${state.payments.reduce((sum, p) => sum + p.amount, 0).toLocaleString()}</div>
+        <div className="text-2xl font-bold">RWF {state.payments.reduce((sum, p) => sum + p.amount, 0).toLocaleString()}</div>
         <div className="text-blue-200 text-sm">Total Revenue</div>
       </div>
       <div className="text-center">
