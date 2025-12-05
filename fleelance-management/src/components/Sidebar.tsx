@@ -19,6 +19,15 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
 
   return (
     <>
+      {/* Overlay */}
+      {isOpen && (
+        <div 
+          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-4 left-4 z-50 p-2 bg-blue-600 text-white rounded-md"
@@ -26,14 +35,10 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
         ☰ 
       </button>
 
-     
-     {/* sidebar */}
+      {/* Sidebar */}
       <div className={`
-        /* Fixed positioning for mobile, static for desktop */
-        fixed lg:static inset-y-0 left-0 z-40
-        /* Styling */
+        fixed lg:static inset-y-0 left-0 z-50
         bg-sky-800 text-white w-64 transform
-        /* Animation - slides in/out on mobile */
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         lg:translate-x-0 transition-transform duration-300
       `}>
@@ -87,13 +92,6 @@ export function Sidebar({ activeSection, onSectionChange }: SidebarProps) {
         </div>
       </div>
 
-    
-      {isOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
     </>
   );
 }

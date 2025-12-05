@@ -184,15 +184,14 @@ function DashboardContent() {
 
   return (
    
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="min-h-screen bg-gray-50 lg:flex">
       <Sidebar 
         activeSection={activeSection} 
         onSectionChange={setActiveSection} 
       />
       
-    
-      <div className="flex-1 lg:ml-0"> 
-        <main className="p-6 lg:p-8">
+      <div className="flex-1 w-full lg:w-auto"> 
+        <main className="pt-16 p-4 sm:p-6 lg:p-8 w-full">
           {renderContent()}
         </main>
       </div>
